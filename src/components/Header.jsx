@@ -2,7 +2,7 @@ import { Github, Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "../contexts/theme";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getSidebarStatus, toggleSidebar } from "../store/slices/chatapp";
+import { getSidebarStatus, openSideBar } from "../store/slices/chatapp";
 
 function Header() {
   const { Themes, theme, toggleTheme } = useTheme();
@@ -14,7 +14,7 @@ function Header() {
         {theme === Themes.DARK ? (
           <button
             className="sm:hidden p-2 "
-            onClick={() => dispatch(toggleSidebar())}
+            onClick={() => dispatch(openSideBar())}
           >
             <Menu color="white" />
           </button>

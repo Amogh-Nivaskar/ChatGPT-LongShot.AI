@@ -80,8 +80,11 @@ const chatAppSlice = createSlice({
       const chatId = action.payload;
       state.toAnimate = chatId;
     },
-    toggleSidebar(state, action) {
-      state.isSidebarOpen = !state.isSidebarOpen;
+    openSideBar(state, action) {
+      state.isSidebarOpen = true;
+    },
+    closeSideBar(state, action) {
+      state.isSidebarOpen = false;
     },
   },
 });
@@ -118,7 +121,8 @@ export const {
   addPromptToChat,
   toggleFetchingStatusForChat,
   setToAnimate,
-  toggleSidebar,
+  openSideBar,
+  closeSideBar,
 } = chatAppSlice.actions;
 
 export default chatAppSlice.reducer;

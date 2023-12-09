@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import {
+  closeSideBar,
   getChatsTitles,
   getSelectedChatId,
   getUsername,
   selectChat,
-  toggleSidebar,
 } from "../store/slices/chatapp";
 import { useDispatch, useSelector } from "react-redux";
 import SidebarItem from "./SidebarItem";
@@ -17,7 +17,7 @@ function Sidebar() {
 
   function handleCreateNewChat() {
     dispatch(selectChat(null));
-    dispatch(toggleSidebar());
+    dispatch(closeSideBar());
   }
 
   return (
@@ -61,7 +61,7 @@ function Sidebar() {
         </div>
         <button
           className="sm:hidden p-2 hover:bg-slate-600 rounded-full transition-all duration-200 ease-in-out"
-          onClick={() => dispatch(toggleSidebar())}
+          onClick={() => dispatch(closeSideBar())}
         >
           <Undo2 size={20} />
         </button>
