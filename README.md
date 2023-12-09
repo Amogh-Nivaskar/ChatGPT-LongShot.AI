@@ -4,6 +4,9 @@ Assignment task: https://longshot-ai.notion.site/Frontend-Assignment-5b2d64fbcc7
 
 Live Link: https://chatgpt-longshot-ai.onrender.com/
 
+Video Demo - 
+https://www.loom.com/share/6517edcdc9ff40e496f6edb24fa06955
+
 ## Project Overview:
 * User can prompt the chat bot and the chat bot responds
 * The user can create multiple chat instances
