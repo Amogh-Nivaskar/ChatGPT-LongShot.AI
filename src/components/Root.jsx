@@ -1,8 +1,8 @@
 import { Outlet, useLocation } from "react-router-dom";
 
 import { useTheme } from "../contexts/theme";
-import Sidebar from "./sidebar";
-import Home from "../pages/home";
+import Sidebar from "./Sidebar";
+import Home from "../pages/Home";
 
 function Root() {
   const { theme } = useTheme();
