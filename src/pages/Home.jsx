@@ -35,8 +35,8 @@ function Home() {
 
   return (
     <div className=" ml-64 flex flex-col items-center justify-evenly h-full  gap-4">
-      <div className="flex flex-col items-center justify-center">
-        <span className="bg-white rounded-full p-1">
+      <div className="flex flex-col items-center justify-center gap-3">
+        <span className="bg-slate-100 border border-slate-400 rounded-full p-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -49,7 +49,7 @@ function Home() {
           </svg>
         </span>
 
-        <p className="dark:text-white text-black text-2xl ">
+        <p className="dark:text-white text-black text-2xl font-semibold ">
           How can I help you today?
         </p>
       </div>
