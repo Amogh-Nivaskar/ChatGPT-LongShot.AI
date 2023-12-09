@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import {
   getChatsTitles,
   getSelectedChatId,
+  getUsername,
   selectChat,
 } from "../store/slices/chatapp";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +10,7 @@ import SidebarItem from "./SidebarItem";
 
 function Sidebar() {
   const titles = useSelector(getChatsTitles);
+  const userName = useSelector(getUsername);
   const dispatch = useDispatch();
 
   return (
@@ -40,6 +42,14 @@ function Sidebar() {
         {titles.map(({ id, title }) => {
           return <SidebarItem key={id} id={id} title={title} />;
         })}
+      </div>
+
+      <div className="fixed bottom-0 left-0 h-20 w-[250px] flex items-center justify-start gap-2  p-2 ">
+        <img
+          className="h-10 w-10 rounded-full object-cover ml-2 "
+          src="/cat3.jpg"
+        />
+        <span className="font-semibold">{userName}</span>
       </div>
     </div>
   );

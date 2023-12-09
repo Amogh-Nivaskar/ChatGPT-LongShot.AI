@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-  userName: "John Doe",
+  userName: "Puss In Boots",
   selectedChatId: null,
   chats: [
     {
@@ -127,3 +127,5 @@ export const getChatById = (chatId) => (state) =>
 
 export const getFetchingStatus = (chatId) => (state) =>
   state.chatApp.chats.find((chat, idx) => chat.id === chatId)?.fetching;
+
+export const getUsername = (state) => state.chatApp.userName;
