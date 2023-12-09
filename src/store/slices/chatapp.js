@@ -123,7 +123,6 @@ const chatAppSlice = createSlice({
     },
     toggleFetchingStatusForChat(state, action) {
       const chatId = action.payload;
-      console.log(chatId);
       state.chats = state.chats.map((chat, idx) => {
         if (chatId === chat.id) {
           return { ...chat, fetching: !chat.fetching };
@@ -149,7 +148,6 @@ export async function sendPrompt(prompt) {
       },
     }
   );
-  console.log(res.data.copies[0].content);
   return res.data.copies[0].content;
 }
 

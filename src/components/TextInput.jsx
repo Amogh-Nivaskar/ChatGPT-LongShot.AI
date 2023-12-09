@@ -40,7 +40,7 @@ function TextInput({
           className={` hover:bg-slate-400 transition-all duration-200 ease-in-out h-7 px-1 ml-2 rounded-lg ${
             value === "" ? "bg-slate-700" : "bg-slate-200"
           }`}
-          onClick={onSubmit}
+          onClick={() => onSubmit(value)}
         >
           {value === "" ? (
             <ArrowBigUp color="rgb(148 163 184)" />
