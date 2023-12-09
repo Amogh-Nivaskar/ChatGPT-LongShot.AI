@@ -137,18 +137,25 @@ const KEY = import.meta.env.VITE_REACT_APP_AI_API_KEY;
 const BASE_URL = "https://api-v2.longshot.ai";
 
 export async function sendPrompt(prompt) {
-  const res = await axios.post(
-    `${BASE_URL}/custom/api/generate/instruct`,
-    {
-      text: prompt,
-    },
-    {
-      headers: {
-        Authorization: `Bearer ${KEY}`,
+  const res = await axios
+    .post(
+      `${BASE_URL}/custom/api/generate/instruct`,
+      {
+        text: prompt,
       },
-    }
-  );
-  return res.data.copies[0].content;
+      {
+        headers: {
+          Authorization: `Bearer ${KEY}`,
+        },
+      }
+    )
+    .catch((error) => error.response);
+  console.log(res);
+  if (res.status === 200 || res.status === 201) {
+    return res.data.copies[0].content;
+  } else {
+    return res.data.message;
+  }
 }
 
 export const {
