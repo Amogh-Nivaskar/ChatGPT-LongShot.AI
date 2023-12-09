@@ -34,7 +34,7 @@ function Home() {
   }
 
   return (
-    <div className=" ml-64 flex flex-col items-center justify-evenly h-screen gap-4">
+    <div className=" ml-64 flex flex-col items-center justify-evenly h-full  gap-4">
       <div className="flex flex-col items-center justify-center">
         <span className="bg-white rounded-full p-1">
           <svg

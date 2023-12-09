@@ -12,7 +12,7 @@ function Sidebar() {
   const dispatch = useDispatch();
 
   return (
-    <div className="w-[250px] h-screen bg-black text-white p-2 flex flex-col gap-2 fixed z-50">
+    <div className="w-[250px] h-screen bg-black text-white p-2 flex flex-col gap-2 fixed z-50 ">
       <div>
         <Link
           to={"/"}

@@ -11,10 +11,10 @@ function Root() {
 
   const isAtRootPath = location.pathname === "/";
   return (
-    <div className={`${theme} flex`}>
+    <div className={`${theme} flex min-h-screen`}>
       <Header />
       <Sidebar />
-      <div className="dark:bg-slate-600 bg-slate-100 w-full h-full">
+      <div className="dark:bg-slate-600 bg-slate-100 w-full">
         {isAtRootPath ? <Home /> : <Outlet />}
       </div>
     </div>
