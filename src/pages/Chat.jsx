@@ -35,12 +35,12 @@ function Chat() {
   }
 
   return (
-    <div className="ml-64  flex flex-col items-center justify-center">
+    <div className="ml-64  flex flex-col items-center justify-center mb-24">
       <div className="fixed top-4 left-72">
         <span className="text-white font-bold text-lg">ChatGPT</span>
       </div>
 
-      <div className="w-3/5 lg:w-[700px] h-screen py-16 text-white">
+      <div className="w-3/5 lg:w-[700px]  py-16 text-white">
         {chat.conversation.map(({ sender, statement }, idx) => {
           return (
             <div key={idx} className="flex flex-col my-6">

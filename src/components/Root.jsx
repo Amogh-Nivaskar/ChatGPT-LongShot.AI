@@ -12,7 +12,7 @@ function Root() {
   return (
     <div className={`${theme} flex`}>
       <Sidebar />
-      <div className="dark:bg-slate-600 w-full  ">
+      <div className="dark:bg-slate-600 w-full h-full">
         {isAtRootPath ? <Home /> : <Outlet />}
       </div>
     </div>
