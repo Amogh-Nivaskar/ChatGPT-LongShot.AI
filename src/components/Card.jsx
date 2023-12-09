@@ -4,10 +4,10 @@ function Card({ command, activity, onSubmit }) {
   return (
     <button
       onClick={() => onSubmit(value)}
-      className="w-full flex flex-col gap-1 text-white border border-white py-2 px-2.5 rounded-lg cursor-pointer hover:bg-slate-500 transition-all duration-200 ease-in-out"
+      className="w-full flex flex-col gap-1 dark:text-white border dark:border-white border-slate-600 py-2 px-2.5 rounded-lg cursor-pointer dark:hover:bg-slate-500 hover:bg-slate-200 transition-all duration-200 ease-in-out"
     >
-      <span className="font-semibold">{command}</span>
-      <p className="text-slate-300">{activity}</p>
+      <span className="font-semibold ">{command}</span>
+      <p className="dark:text-slate-300 text-slate-500">{activity}</p>
     </button>
   );
 }

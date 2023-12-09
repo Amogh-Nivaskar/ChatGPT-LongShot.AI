@@ -49,7 +49,9 @@ function Home() {
           </svg>
         </span>
 
-        <p className="text-white text-2xl ">How can I help you today?</p>
+        <p className="dark:text-white text-black text-2xl ">
+          How can I help you today?
+        </p>
       </div>
 
       <div className="flex flex-col gap-2 w-3/4 2xl:w-1/2">
@@ -79,7 +81,7 @@ function Home() {
         </div>
       </div>
 
-      <div className=" w-3/5 fixed bottom-0 flex ">
+      <div className=" w-3/5 fixed bottom-0 flex items-center justify-center">
         <TextInput
           placeholder={isFetching ? "Fetching Answer..." : "Message ChatGPT..."}
           value={value}

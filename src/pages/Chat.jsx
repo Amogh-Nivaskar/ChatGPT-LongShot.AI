@@ -36,11 +36,7 @@ function Chat() {
 
   return (
     <div className="ml-64  flex flex-col items-center justify-center mb-24">
-      <div className="fixed top-4 left-72">
-        <span className="text-white font-bold text-lg">ChatGPT</span>
-      </div>
-
-      <div className="w-3/5 lg:w-[700px]  py-16 text-white">
+      <div className="w-3/5 lg:w-[700px]  py-12 dark:text-white">
         {chat.conversation.map(({ sender, statement }, idx) => {
           return (
             <div key={idx} className="flex flex-col my-6">
@@ -60,7 +56,7 @@ function Chat() {
         )}
       </div>
 
-      <div className=" w-3/5 fixed bottom-0 flex ">
+      <div className=" w-3/5 fixed bottom-0 flex items-center justify-center">
         <TextInput
           placeholder={isFetching ? "Fetching Answer..." : "Message ChatGPT..."}
           value={value}
