@@ -16,66 +16,10 @@ const initialState = {
         },
         {
           sender: "AI",
-          statement: "Ask it anything you want to ask",
-        },
-        {
-          sender: "ME",
-          statement: "how many days are there in february?",
-        },
-        {
-          sender: "AI",
           statement:
-            "February typically has 28 days, but in a leap year, it has 29 days. Leap years occur every four years to account for the extra roughly 0.25 days in the Earth's orbit around the sun. If a year is evenly divisible by 4, it is a leap year, unless it is also divisible by 100. However, if a year is divisible by 400, then it is still considered a leap year. For example, the year 2020 was a leap year, and the next leap year after that was 2024.",
+            "Ask it anything you want to ask, but make sure you have enough credits first !!",
         },
-        // {
-        //   sender: "ME",
-        //   statement: "how many days are there in february?",
-        // },
-        // {
-        //   sender: "AI",
-        //   statement:
-        //     "February typically has 28 days, but in a leap year, it has 29 days. Leap years occur every four years to account for the extra roughly 0.25 days in the Earth's orbit around the sun. If a year is evenly divisible by 4, it is a leap year, unless it is also divisible by 100. However, if a year is divisible by 400, then it is still considered a leap year. For example, the year 2020 was a leap year, and the next leap year after that was 2024.",
-        // },
-        // {
-        //   sender: "ME",
-        //   statement: "how many days are there in february?",
-        // },
-        // {
-        //   sender: "AI",
-        //   statement:
-        //     "February typically has 28 days, but in a leap year, it has 29 days. Leap years occur every four years to account for the extra roughly 0.25 days in the Earth's orbit around the sun. If a year is evenly divisible by 4, it is a leap year, unless it is also divisible by 100. However, if a year is divisible by 400, then it is still considered a leap year. For example, the year 2020 was a leap year, and the next leap year after that was 2024.",
-        // },
-        // {
-        //   sender: "ME",
-        //   statement: "how many days are there in february?",
-        // },
-        // {
-        //   sender: "AI",
-        //   statement:
-        //     "February typically has 28 days, but in a leap year, it has 29 days. Leap years occur every four years to account for the extra roughly 0.25 days in the Earth's orbit around the sun. If a year is evenly divisible by 4, it is a leap year, unless it is also divisible by 100. However, if a year is divisible by 400, then it is still considered a leap year. For example, the year 2020 was a leap year, and the next leap year after that was 2024.",
-        // },
-        // {
-        //   sender: "ME",
-        //   statement: "how many days are there in february?",
-        // },
-        // {
-        //   sender: "AI",
-        //   statement:
-        //     "February typically has 28 days, but in a leap year, it has 29 days. Leap years occur every four years to account for the extra roughly 0.25 days in the Earth's orbit around the sun. If a year is evenly divisible by 4, it is a leap year, unless it is also divisible by 100. However, if a year is divisible by 400, then it is still considered a leap year. For example, the year 2020 was a leap year, and the next leap year after that was 2024.",
-        // },
       ],
-    },
-    {
-      id: "2",
-      title: "How to run",
-      fetching: false,
-      conversation: [],
-    },
-    {
-      id: "3",
-      title: "Learn an new technology quickly with the help of AI",
-      fetching: false,
-      conversation: [],
     },
   ],
 };
