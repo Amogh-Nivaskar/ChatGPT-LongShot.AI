@@ -92,6 +92,10 @@ function Home() {
           disabled={isFetching}
         />
       </div>
+
+      <span className="fixed bottom-2 right-2 text-xs font-thin dark:text-white">
+        Made by Amogh Nivaskar
+      </span>
     </div>
   );
 }
