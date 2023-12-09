@@ -4,6 +4,7 @@ import axios from "axios";
 const initialState = {
   userName: "Puss In Boots",
   selectedChatId: null,
+  toAnimate: null,
   chats: [
     {
       id: "1",
@@ -74,6 +75,10 @@ const chatAppSlice = createSlice({
         return chat;
       });
     },
+    setToAnimate(state, action) {
+      const chatId = action.payload;
+      state.toAnimate = chatId;
+    },
   },
 });
 
@@ -108,6 +113,7 @@ export const {
   selectChat,
   addPromptToChat,
   toggleFetchingStatusForChat,
+  setToAnimate,
 } = chatAppSlice.actions;
 
 export default chatAppSlice.reducer;
@@ -129,3 +135,5 @@ export const getFetchingStatus = (chatId) => (state) =>
   state.chatApp.chats.find((chat, idx) => chat.id === chatId)?.fetching;
 
 export const getUsername = (state) => state.chatApp.userName;
+
+export const getToAnimate = (state) => state.chatApp.toAnimate;

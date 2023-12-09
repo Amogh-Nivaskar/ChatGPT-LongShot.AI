@@ -5,6 +5,7 @@ import {
   createNewChat,
   selectChat,
   sendPrompt,
+  setToAnimate,
   toggleFetchingStatusForChat,
 } from "../store/slices/chatapp";
 import { v4 as uuidv4 } from "uuid";
@@ -31,6 +32,7 @@ function Home() {
     const response = await sendPrompt(prompt);
     dispatch(addPromptToChat({ id, sender: "AI", statement: response }));
     dispatch(toggleFetchingStatusForChat(id));
+    dispatch(setToAnimate(id));
   }
 
   return (

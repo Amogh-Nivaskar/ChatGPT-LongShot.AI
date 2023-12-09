@@ -7,9 +7,11 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { XCircle } from "lucide-react";
+import TypedText from "./TypedText";
 
 function SidebarItem({ id, title }) {
   const dispatch = useDispatch();
+  const [animate, setAnimate] = useState(false);
   const selectedChatId = useSelector(getSelectedChatId);
   const [hover, setHover] = useState(false);
   const navigate = useNavigate();
@@ -34,7 +36,9 @@ function SidebarItem({ id, title }) {
         to={`/${id}`}
         className={`text-white w-full flex justify-between items-center  whitespace-nowrap overflow-hidden overflow-ellipsis text-sm `}
       >
-        <span className="text-slate-100 ">{title}</span>
+        <span className="text-slate-100 ">
+          {selectedChatId === id ? <TypedText text={title} /> : title}
+        </span>
       </Link>
       {hover && (
         <button onClick={() => deleteChat(id)}>
