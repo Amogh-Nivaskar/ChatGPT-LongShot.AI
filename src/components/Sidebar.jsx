@@ -4,21 +4,28 @@ import {
   getSelectedChatId,
   getUsername,
   selectChat,
+  toggleSidebar,
 } from "../store/slices/chatapp";
 import { useDispatch, useSelector } from "react-redux";
 import SidebarItem from "./SidebarItem";
+import { Undo2 } from "lucide-react";
 
 function Sidebar() {
   const titles = useSelector(getChatsTitles);
   const userName = useSelector(getUsername);
   const dispatch = useDispatch();
 
+  function handleCreateNewChat() {
+    dispatch(selectChat(null));
+    dispatch(toggleSidebar());
+  }
+
   return (
-    <div className="w-[250px] h-screen bg-black text-white p-2 flex flex-col gap-2 fixed z-50 overflow-y-scroll ">
+    <div className=" w-full sm:w-[250px] h-screen bg-black text-white p-2 flex flex-col gap-2 fixed z-50 overflow-y-scroll ">
       <div>
         <Link
           to={"/"}
-          onClick={() => dispatch(selectChat(null))}
+          onClick={handleCreateNewChat}
           className="w-full p-2 flex items-center gap-2 rounded-lg hover:bg-slate-800 transition-all duration-200 ease-in-out"
         >
           <span className="bg-white rounded-full p-1">
@@ -44,12 +51,20 @@ function Sidebar() {
         })}
       </div>
 
-      <div className="fixed bottom-0 left-0 h-20 w-[250px] flex items-center justify-start gap-2  p-2 ">
-        <img
-          className="h-10 w-10 rounded-full object-cover ml-2 "
-          src="/cat3.jpg"
-        />
-        <span className="font-semibold">{userName}</span>
+      <div className="fixed bottom-0 left-0 h-20 w-full sm:w-[250px] flex items-center justify-between gap-2  p-2 ">
+        <div className="flex items-center justify-center gap-2">
+          <img
+            className="h-10 w-10 rounded-full object-cover ml-2 "
+            src="/cat3.jpg"
+          />
+          <span className="font-semibold">{userName}</span>
+        </div>
+        <button
+          className="sm:hidden p-2 hover:bg-slate-600 rounded-full transition-all duration-200 ease-in-out"
+          onClick={() => dispatch(toggleSidebar())}
+        >
+          <Undo2 size={20} />
+        </button>
       </div>
     </div>
   );

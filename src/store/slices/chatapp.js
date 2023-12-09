@@ -3,6 +3,7 @@ import axios from "axios";
 
 const initialState = {
   userName: "Puss In Boots",
+  isSidebarOpen: false,
   selectedChatId: null,
   toAnimate: null,
   chats: [
@@ -79,6 +80,9 @@ const chatAppSlice = createSlice({
       const chatId = action.payload;
       state.toAnimate = chatId;
     },
+    toggleSidebar(state, action) {
+      state.isSidebarOpen = !state.isSidebarOpen;
+    },
   },
 });
 
@@ -114,6 +118,7 @@ export const {
   addPromptToChat,
   toggleFetchingStatusForChat,
   setToAnimate,
+  toggleSidebar,
 } = chatAppSlice.actions;
 
 export default chatAppSlice.reducer;
@@ -137,3 +142,5 @@ export const getFetchingStatus = (chatId) => (state) =>
 export const getUsername = (state) => state.chatApp.userName;
 
 export const getToAnimate = (state) => state.chatApp.toAnimate;
+
+export const getSidebarStatus = (state) => state.chatApp.isSidebarOpen;

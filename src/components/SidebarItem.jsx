@@ -3,6 +3,7 @@ import {
   deleteChatById,
   getSelectedChatId,
   selectChat,
+  toggleSidebar,
 } from "../store/slices/chatapp";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -23,9 +24,14 @@ function SidebarItem({ id, title }) {
     }
   }
 
+  function handleClick() {
+    dispatch(selectChat(id));
+    dispatch(toggleSidebar());
+  }
+
   return (
     <div
-      onClick={() => dispatch(selectChat(id))}
+      onClick={handleClick}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       className={`${

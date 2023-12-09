@@ -41,15 +41,15 @@ function Chat() {
 
   if (!chat) {
     return (
-      <div className="ml-64  flex flex-col items-center justify-center mb-24 dark:text-white h-screen text-lg ">
+      <div className="ml-2 sm:ml-64  flex flex-col items-center justify-center mb-24 dark:text-white h-screen text-lg ">
         Chat with id of '{chatId}' doesn't exist !!
       </div>
     );
   }
 
   return (
-    <div className="ml-64  flex flex-col items-center justify-center mb-24">
-      <div className="w-3/5 lg:w-[700px]  py-12 dark:text-white">
+    <div className=" ml-2 sm:ml-64  flex flex-col items-center justify-center mb-24">
+      <div className="w-full sm:w-3/5 lg:w-[700px]  py-12 dark:text-white">
         {chat.conversation.map(({ sender, statement, id }, idx) => {
           return (
             <div key={idx} className="flex flex-col my-6 ">
@@ -159,7 +159,7 @@ function Chat() {
         )}
       </div>
 
-      <div className=" w-3/5 fixed bottom-0 flex items-center justify-center">
+      <div className="w-full sm:w-3/5 fixed bottom-0 flex items-center justify-center">
         <TextInput
           placeholder={isFetching ? "Fetching Answer..." : "Message ChatGPT..."}
           value={value}

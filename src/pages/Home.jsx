@@ -36,7 +36,7 @@ function Home() {
   }
 
   return (
-    <div className=" ml-64 flex flex-col items-center justify-evenly h-full  gap-4">
+    <div className="  sm:ml-64 flex flex-col items-center justify-evenly h-full  gap-4">
       <div className="flex flex-col items-center justify-center gap-3">
         <span className="bg-slate-100 border border-slate-400 rounded-full p-2">
           <svg
@@ -56,7 +56,7 @@ function Home() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2 w-3/4 2xl:w-1/2">
+      <div className="hidden sm:flex flex-col gap-2 w-3/4 2xl:w-1/2">
         <div className="flex gap-2">
           <Card
             command={"Help me"}
@@ -83,7 +83,7 @@ function Home() {
         </div>
       </div>
 
-      <div className=" w-3/5 fixed bottom-0 flex items-center justify-center">
+      <div className=" w-full sm:w-3/5 fixed bottom-0 flex items-center justify-center">
         <TextInput
           placeholder={isFetching ? "Fetching Answer..." : "Message ChatGPT..."}
           value={value}

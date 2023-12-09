@@ -1,12 +1,35 @@
-import { Github, Moon, Sun } from "lucide-react";
+import { Github, Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "../contexts/theme";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getSidebarStatus, toggleSidebar } from "../store/slices/chatapp";
 
 function Header() {
   const { Themes, theme, toggleTheme } = useTheme();
+  const dispatch = useDispatch();
+
   return (
-    <div className=" flex items-center justify-between h-12 fixed top-0 left-72 right-6 dark:bg-slate-600 opacity-90">
-      <span className="dark:text-slate-100  font-bold text-lg">ChatGPT</span>
+    <div className=" flex items-center justify-between h-12 fixed top-0 left-0 sm:left-72 right-6 dark:bg-slate-600 opacity-90">
+      <div className="flex items-center">
+        {theme === Themes.DARK ? (
+          <button
+            className="sm:hidden p-2 "
+            onClick={() => dispatch(toggleSidebar())}
+          >
+            <Menu color="white" />
+          </button>
+        ) : (
+          <button
+            className="sm:hidden p-2 "
+            onClick={() => dispatch(toggleSidebar())}
+          >
+            <Menu color="black" />
+          </button>
+        )}
+        <span className="dark:text-slate-100  sm:block  font-bold text-lg">
+          ChatGPT
+        </span>
+      </div>
       <div className="flex items-center justify-center gap-3">
         <Link
           to={"https://github.com/Amogh-Nivaskar/ChatGPT-LongShot.AI"}
