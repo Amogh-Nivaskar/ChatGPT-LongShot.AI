@@ -3,8 +3,10 @@ import TextInput from "../components/TextInput";
 import {
   addPromptToChat,
   createNewChat,
+  getTitle,
   selectChat,
   sendPrompt,
+  setTitle,
   setToAnimate,
   toggleFetchingStatusForChat,
 } from "../store/slices/chatapp";
@@ -29,7 +31,9 @@ function Home() {
     setValue("");
     navigate(`/${id}`);
     dispatch(createNewChat({ id, prompt }));
+    const title = await getTitle(prompt);
     const response = await sendPrompt(prompt);
+    dispatch(setTitle({ id, title }));
     dispatch(addPromptToChat({ id, sender: "AI", statement: response }));
     dispatch(toggleFetchingStatusForChat(id));
     dispatch(setToAnimate(id));

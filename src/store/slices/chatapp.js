@@ -34,7 +34,7 @@ const chatAppSlice = createSlice({
       const { id, prompt } = action.payload;
       state.chats.unshift({
         id,
-        title: prompt,
+        title: "",
         fetching: true,
         conversation: [
           {
@@ -42,6 +42,15 @@ const chatAppSlice = createSlice({
             statement: prompt,
           },
         ],
+      });
+    },
+    setTitle(state, action) {
+      const { id, title } = action.payload;
+      state.chats = state.chats.map((chat, idx) => {
+        if (chat.id === id) {
+          chat.title = title;
+        }
+        return chat;
       });
     },
     deleteChatById(state, action) {
@@ -114,6 +123,30 @@ export async function sendPrompt(prompt) {
   }
 }
 
+export async function getTitle(prompt) {
+  const newPrompt = `Give a short title describing this prompt - ${prompt}`;
+
+  const res = await axios
+    .post(
+      `${BASE_URL}/custom/api/generate/instruct`,
+      {
+        text: newPrompt,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${KEY}`,
+        },
+      }
+    )
+    .catch((error) => error.response);
+  console.log(res);
+  if (res.status === 200 || res.status === 201) {
+    return res.data.copies[0].content;
+  } else {
+    return res.data.message;
+  }
+}
+
 export const {
   createNewChat,
   deleteChatById,
@@ -123,6 +156,7 @@ export const {
   setToAnimate,
   openSideBar,
   closeSideBar,
+  setTitle,
 } = chatAppSlice.actions;
 
 export default chatAppSlice.reducer;

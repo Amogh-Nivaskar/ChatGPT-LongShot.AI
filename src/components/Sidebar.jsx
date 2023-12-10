@@ -15,8 +15,6 @@ function Sidebar() {
   const userName = useSelector(getUsername);
   const dispatch = useDispatch();
 
-  const reverseTitles = titles.reverse();
-
   function handleCreateNewChat() {
     dispatch(selectChat(null));
     dispatch(closeSideBar());
@@ -49,7 +47,9 @@ function Sidebar() {
       <div className="flex flex-col gap-1 p-1">
         <span className="text-xs text-slate-400 px-2">Chats</span>
         {titles.map(({ id, title }) => {
-          return <SidebarItem key={id} id={id} title={title} />;
+          if (title !== "") {
+            return <SidebarItem key={id} id={id} title={title} />;
+          }
         })}
       </div>
 
