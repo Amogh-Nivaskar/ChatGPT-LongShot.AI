@@ -15,6 +15,8 @@ function Sidebar() {
   const userName = useSelector(getUsername);
   const dispatch = useDispatch();
 
+  const reverseTitles = titles.reverse();
+
   function handleCreateNewChat() {
     dispatch(selectChat(null));
     dispatch(closeSideBar());

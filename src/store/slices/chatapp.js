@@ -32,7 +32,7 @@ const chatAppSlice = createSlice({
   reducers: {
     createNewChat(state, action) {
       const { id, prompt } = action.payload;
-      state.chats.push({
+      state.chats.unshift({
         id,
         title: prompt,
         fetching: true,

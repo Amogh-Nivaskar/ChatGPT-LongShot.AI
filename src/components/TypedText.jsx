@@ -6,6 +6,7 @@ import { setToAnimate } from "../store/slices/chatapp";
 const TypedText = ({ text, type }) => {
   const [typedText, setTypedText] = useState("");
   const dispatch = useDispatch();
+  const duration = type === "chat" ? 30 : 70;
 
   useEffect(() => {
     let index = 0;
@@ -24,7 +25,7 @@ const TypedText = ({ text, type }) => {
           return prevText;
         }
       });
-    }, 70);
+    }, duration);
 
     return () => clearInterval(intervalId);
   }, [text]);
