@@ -1,4 +1,4 @@
-# ChatGPT Clone for Longshot.AI internship assignment
+# ChatGPT Frontend Clone for Longshot.AI internship assignment
 
 Assignment task: https://longshot-ai.notion.site/Frontend-Assignment-5b2d64fbcc7d43129eec24417704d1c0
 
